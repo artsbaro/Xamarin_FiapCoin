@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:FiapCoin.ViewModel"
+    x:Class="FiapCoin.Views.LoginPage" BackgroundColor="#a96538">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="/Assets/styles.css" />
+    </ContentPage.Resources>
+    
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        
+        <Frame CornerRadius="10"  
+               OutlineColor="Transparent" 
+               HasShadow="False"
+               HorizontalOptions="Center" 
+               VerticalOptions="Center">
+            <StackLayout VerticalOptions="CenterAndExpand" Margin="10">
+                <Image Source="icon.png"></Image>
+
+                <Entry  Placeholder="Email" Text="{Binding Usuario.Email, Mode=TwoWay}"></Entry>
+
+                <Entry 
+                    Placeholder="Senha" 
+                    HorizontalOptions="FillAndExpand"
+                    IsPassword="True"
+                    Text="{Binding Usuario.Senha, Mode=TwoWay}">
+                </Entry>
+
+                <Button
+                    x:Name="btnEntrar"  
+                    Text="Entrar" 
+                    StyleClass="enter"
+                    Command="{Binding EntrarClickedCommand}" />
+
+                <Label Text=""></Label>
+
+                <Button
+                    x:Name="btnScannear"  
+                    Text="Scannear Acesso" 
+                    StyleClass="scanner"
+                    Command="{Binding ScannerClickedCommand}" />
+                <Label Text=""></Label>
+                
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

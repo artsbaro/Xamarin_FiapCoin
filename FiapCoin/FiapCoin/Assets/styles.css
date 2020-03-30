@@ -1,0 +1,31 @@
+﻿^Entry {
+    height: 40;
+    color: #666;
+    border-style:dotted;
+    border-color: #a96538;
+}
+
+^Frame {
+    background-color:white;
+    width:300;
+    height:300;
+}
+
+^Button {
+    font-size: 12;
+    color: #a96538;
+    margin: 0;
+}
+
+^Button.enter {
+    background-color: #a96538;
+    color: #fff;
+}
+
+^Button.scanner {
+    background-color: #FFFFFF;
+    color: #a96538;
+    border-color: #a96538;
+    border-radius: 4;
+    border-width: 4;
+}
